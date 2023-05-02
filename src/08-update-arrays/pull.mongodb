@@ -1,0 +1,18 @@
+use("platzi_store")
+
+//Dejando el dataset vacio, trae todo.
+//Remove one element from array
+// db.inventory.updateMany({}, {
+//     $pull: {
+//         tags: "book"
+//     }
+// })
+
+//Remove others elements from array
+db.inventory.updateMany({}, {
+    $pull: {
+        tags: {
+            $in: ['appliance', 'school']
+        }
+    }
+})
